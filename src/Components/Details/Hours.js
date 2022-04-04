@@ -13,7 +13,7 @@ const Hours = ({forecast}) => {
       <Back />
       <div className="hour">
         {data?.map((x,y)=>{
-          return <Template key={y} weekday={Dayjs(x.time).format("HH : mm")} date={Dayjs(x.date).format("D MMM, YYYY")} icon={x.condition.icon} temp={x.temp_c} path/>
+          return <Template key={y} weekday={Dayjs(x.time).format("HH : mm")} date={Dayjs(x.date).format("D MMM, YYYY")} icon={x.condition.icon} temp={x.temp_c} path ={`/forecast/${+id.id}/${y}`}/>
         })}
       </div>
     </div>

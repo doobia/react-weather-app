@@ -6,7 +6,7 @@ import Error from "./Components/Error";
 import Daily from "./Components/Daily";
 import Tabs from "./Components/Tabs";
 import Forecast from "./Components/Forecast";
-// import Details from "./Components/Details/Details";
+import Details from "./Components/Details/Details";
 import Hours from "./Components/Details/Hours";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -42,7 +42,8 @@ function App() {
           <Routes>
             <Route path="/" element ={status? <Daily current={current} location={location}/> : <Error/>}/>
             <Route path="/forecast" element ={status? <Forecast forecast={forecast?.forecastday} location={location}/> : <Error/>}/>
-            <Route path="/forecast/:id" element={<Hours forecast={forecast?.forecastday} />}
+            <Route path="/forecast/:id" element={<Hours forecast={forecast?.forecastday} />} />
+            <Route path ="/forecast/:id/:id" element={<Details forecast={forecast?.forecastday}/> } />
           />
           </Routes>
         </Router>
