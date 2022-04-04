@@ -1,38 +1,71 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
 .App {
-  text-align: center;
+  width: 350px;
+  height: 600px;
+  border-radius: 10px;
+  border: 2px solid #2052d1;
+  padding: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.react-link {
+  color: black;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.active {
+  color: #0b5ed7 !important;
+  font-weight: bold;
+  border-bottom: 3px solid #0b5ed7;
+}
+
+.dailyResults {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.dailyResults [class^="card-"] {
+  border-radius: 8px;
+  background-color: #d2d7e4;
+  height: 135px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+}
+
+.daily-icons {
+  color: #2052d1;
+  font-size: 25px;
+}
+
+.template-day,
+.template-hour {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #f4f6fd;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.common-link {
+  color: black;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hour {
+  height: 380px;
+  overflow-y: scroll;
+}
+.hour::-webkit-scrollbar {
+  width: 0;
 }
